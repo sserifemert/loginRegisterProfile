@@ -64,7 +64,7 @@
         android:background="@drawable/border"
         android:ems="10"
         android:hint="Email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textColor="#F6F0F0"
         android:textColorHint="#838383"
         app:layout_constraintEnd_toEndOf="parent"

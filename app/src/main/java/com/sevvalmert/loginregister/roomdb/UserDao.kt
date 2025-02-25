@@ -20,6 +20,8 @@ interface UserDao {
     @Query("SELECT COUNT(*) FROM User WHERE (user_name = :userName OR email_adress = :email) AND password = :password_")
     fun checkUserExistsAndTrue(userName : String , email : String , password_ : String): Single<Int>
 
+    @Query("SELECT * FROM User WHERE user_name = :input OR email_adress = :input LIMIT 1")
+    fun getUserByUsername(input: String): Single<User>
 
     @Delete()
     fun delete (user : User) : Completable

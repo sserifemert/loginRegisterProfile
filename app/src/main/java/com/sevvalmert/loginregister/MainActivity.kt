@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
                     .subscribe({ count ->
                         if (count == 1) {
                             val intent = Intent(this,MainActivity2::class.java)
+                            intent.putExtra("USERNAME",userName)
+                            intent.putExtra("EMAIL",emailU)
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                             startActivity(intent)
                         }

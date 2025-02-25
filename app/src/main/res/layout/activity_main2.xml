@@ -5,6 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_main"
     tools:context=".MainActivity2">
 
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:background="@drawable/giris_border"
+        android:onClick="delete"
+        android:text="Hesabı Sil"
+        android:textColor="#F6F0F0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
