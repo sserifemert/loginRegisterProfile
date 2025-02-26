@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/deleteButton"
-        android:layout_width="239dp"
-        android:layout_height="48dp"
+        android:layout_width="333dp"
+        android:layout_height="73dp"
         android:background="@drawable/giris_border"
         android:onClick="delete"
         android:text="Hesabı Sil"
@@ -20,5 +20,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.805" />
+
+    <Button
+        android:id="@+id/updateProfile"
+        android:layout_width="333dp"
+        android:layout_height="73dp"
+        android:background="@drawable/giris_border"
+        android:onClick="update"
+        android:text="Hesap Bilgilerini Güncelle"
+        android:textColor="#F6F0F0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
 </androidx.constraintlayout.widget.ConstraintLayout>

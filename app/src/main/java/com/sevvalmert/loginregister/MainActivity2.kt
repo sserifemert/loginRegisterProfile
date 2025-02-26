@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
 import com.sevvalmert.loginregister.databinding.ActivityMain2Binding
-import com.sevvalmert.loginregister.model.User
 import com.sevvalmert.loginregister.roomdb.UserDao
 import com.sevvalmert.loginregister.roomdb.UserDatabase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -39,8 +38,7 @@ class MainActivity2 : AppCompatActivity() {
         }
         val db = Room.databaseBuilder(applicationContext, UserDatabase::class.java, "User").build()
         userDao = db.userDao()
-        userNameOrEmail = intent.getStringExtra("USERNAME")
-        userNameOrEmail= intent.getStringExtra("EMAIL")
+        userNameOrEmail = intent.getStringExtra("USERNAME") ?: intent.getStringExtra("EMAIL")
     }
 
     fun delete (view: View) {
@@ -64,7 +62,14 @@ class MainActivity2 : AppCompatActivity() {
                 })
         )
 
+    }
 
+    fun update(view:View)
+    {
+        val intent = Intent(this,UpdateActivity::class.java)
+        intent.putExtra("USERNAME",userNameOrEmail)
+        intent.putExtra("EMAIL",userNameOrEmail)
+        startActivity(intent)
     }
 
 }
