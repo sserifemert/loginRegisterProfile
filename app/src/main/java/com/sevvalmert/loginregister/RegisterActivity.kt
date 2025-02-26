@@ -2,6 +2,7 @@ package com.sevvalmert.loginregister
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -55,7 +56,12 @@ class RegisterActivity : AppCompatActivity() {
         if (nameU.isEmpty() || lastU.isEmpty() || userName.isEmpty() || emailU.isEmpty() || sifreU.isEmpty()) {
             Toast.makeText(this, "Lütfen tüm alanları doldurun!", Toast.LENGTH_SHORT).show()
         }
-        else if(telefonU.length != 10 || telefonU.isEmpty() || !telefonU.matches("\\d+".toRegex())) {
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailU).matches()) {
+            Toast.makeText(this,"Geçerli bir email adresi giriniz",Toast.LENGTH_LONG).show()
+        }
+
+        if(telefonU.length != 10 || telefonU.isEmpty() || !telefonU.matches("\\d+".toRegex())) {
             Toast.makeText(this,"Telefon numarası boş bırakılmamalı ve 10 haneli olmalıdır", Toast.LENGTH_LONG).show()
         }
         else{
